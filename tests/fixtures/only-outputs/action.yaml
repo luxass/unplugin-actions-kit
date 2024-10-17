@@ -1,0 +1,10 @@
+name: GitHub Action Fixture (Yaml)
+description: A GitHub Action Fixture (Yaml)
+
+outputs:
+  message:
+    description: The greeting message
+
+runs:
+  using: node20
+  main: dist/index.js

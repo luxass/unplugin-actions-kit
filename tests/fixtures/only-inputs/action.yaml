@@ -1,0 +1,15 @@
+name: GitHub Action Fixture (Yaml)
+description: A GitHub Action Fixture (Yaml)
+
+inputs:
+  type:
+    description: The type of greeting
+    required: true
+
+  who-to-greet:
+    description: Who to greet
+    required: true
+
+runs:
+  using: node20
+  main: dist/index.js
