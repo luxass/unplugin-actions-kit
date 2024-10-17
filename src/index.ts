@@ -3,7 +3,7 @@ import { dirname, join } from "node:path";
 import process from "node:process";
 import YAML from "js-yaml";
 import { createUnplugin, type UnpluginFactory, type UnpluginInstance } from "unplugin";
-import { writeAugmentationTypes, writeTypeInjects } from "./utils";
+import { ACTION_SCHEMA, writeAugmentationTypes, writeTypeInjects } from "./utils";
 import type { ActionsKitOptions } from "./types";
 
 /**
@@ -11,8 +11,8 @@ import type { ActionsKitOptions } from "./types";
  */
 export const unpluginFactory: UnpluginFactory<ActionsKitOptions | undefined> = (options = {}) => {
 	let entryPoint: string | undefined;
-	let actionInputs: Record<string, string> | undefined;
-	let actionOutputs: Record<string, string> | undefined;
+	let actionInputs: Record<string, unknown> | undefined;
+	let actionOutputs: Record<string, unknown> | undefined;
 
 	return {
 		name: "unplugin-actions-kit",
@@ -39,17 +39,18 @@ export const unpluginFactory: UnpluginFactory<ActionsKitOptions | undefined> = (
 				throw new Error("entryPoint is not set");
 			}
 
-			if (id.startsWith("./")) {
+			let modifiedId = id;
+			if (modifiedId.startsWith("./")) {
 				// remove the "./" prefix
-				id = id.slice(2);
+				modifiedId = modifiedId.slice(2);
 			}
 
-			if (!join(process.cwd(), entryPoint).endsWith(id)) {
+			if (!join(process.cwd(), entryPoint).endsWith(modifiedId)) {
 				return;
 			}
 
 			if (options.inject != null && options.inject !== false) {
-				let injectCode = ``;
+				let injectCode = "";
 
 				if (options.inject === "inputs") {
 					if (actionInputs == null) {
@@ -97,7 +98,15 @@ export const unpluginFactory: UnpluginFactory<ActionsKitOptions | undefined> = (
 			}
 
 			// read the file
-			const yaml = YAML.load(readFileSync(options.actionPath, "utf8")) as Record<string, any>;
+			const parseResult = ACTION_SCHEMA.safeParse(
+				YAML.load(readFileSync(options.actionPath, "utf8")),
+			);
+
+			if (!parseResult.success) {
+				throw new Error("action.yml or action.yaml is invalid");
+			}
+
+			const yaml = parseResult.data;
 
 			if (yaml == null) {
 				throw new Error("action.yml or action.yaml is empty");

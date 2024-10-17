@@ -17,6 +17,9 @@ importers:
       unplugin:
         specifier: ^1.14.1
         version: 1.14.1(webpack-sources@3.2.3)
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@actions/core':
         specifier: ^1.11.1

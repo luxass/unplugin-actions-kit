@@ -75,7 +75,9 @@ it("expect no `actions-kit.d.ts` file generated if plugin not in use", async () 
 
 	expect(json?.errors).toHaveLength(0);
 
+	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	const file = json!.assetsByChunkName!.main;
+	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 	expect(content).toMatchSnapshot();
@@ -110,7 +112,9 @@ it("expect `actions-kit.d.ts` to be generated", async () => {
 
 	expect(json?.errors).toHaveLength(0);
 
+	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	const file = json!.assetsByChunkName!.main;
+	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 	expect(content).toMatchSnapshot();
@@ -147,7 +151,9 @@ describe("augmentations", () => {
 
 		expect(json?.errors).toHaveLength(0);
 
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const file = json!.assetsByChunkName!.main;
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 		expect(content).toMatchSnapshot();
@@ -186,7 +192,9 @@ describe("augmentations", () => {
 
 		expect(json?.errors).toHaveLength(0);
 
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const file = json!.assetsByChunkName!.main;
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 		expect(content).toMatchSnapshot();
@@ -225,7 +233,9 @@ describe("augmentations", () => {
 
 		expect(json?.errors).toHaveLength(0);
 
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const file = json!.assetsByChunkName!.main;
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 		expect(content).toMatchSnapshot();
@@ -267,7 +277,9 @@ describe("inject", () => {
 
 		expect(json?.errors).toHaveLength(0);
 
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const file = json!.assetsByChunkName!.main;
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 		expect(content).toMatchSnapshot();
@@ -309,7 +321,9 @@ describe("inject", () => {
 
 		expect(json?.errors).toHaveLength(0);
 
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const file = json!.assetsByChunkName!.main;
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 		expect(content).toMatchSnapshot();
@@ -351,7 +365,9 @@ describe("inject", () => {
 
 		expect(json?.errors).toHaveLength(0);
 
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const file = json!.assetsByChunkName!.main;
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 		expect(content).toMatchSnapshot();
@@ -393,7 +409,9 @@ describe("inject", () => {
 
 		expect(json?.errors).toHaveLength(0);
 
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const file = json!.assetsByChunkName!.main;
+		// biome-ignore lint/style/noNonNullAssertion: <explanation>
 		const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 		expect(content).toMatchSnapshot();
@@ -436,7 +454,9 @@ it("custom output path", async () => {
 
 	expect(json?.errors).toHaveLength(0);
 
+	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	const file = json!.assetsByChunkName!.main;
+	// biome-ignore lint/style/noNonNullAssertion: <explanation>
 	const content = await readFile(path.join(testdirPath, file![0]!), "utf-8");
 
 	expect(content).toMatchSnapshot();

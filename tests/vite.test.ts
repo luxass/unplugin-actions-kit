@@ -35,10 +35,10 @@ it("expect no `actions-kit.d.ts` file generated if plugin not in use", async () 
 	const firstResult = result[0];
 
 	expect(firstResult).toBeDefined();
-	expect(firstResult!.output).toBeDefined();
-	expect(firstResult!.output[0]).toBeDefined();
-	expect(firstResult!.output[0].code).toBeDefined();
-	expect(firstResult!.output[0].code).toMatchSnapshot();
+	expect(firstResult?.output).toBeDefined();
+	expect(firstResult?.output[0]).toBeDefined();
+	expect(firstResult?.output[0].code).toBeDefined();
+	expect(firstResult?.output[0].code).toMatchSnapshot();
 
 	const files = await readdir(testdirPath);
 	expect(files).not.toContain("actions-kit.d.ts");
@@ -79,10 +79,10 @@ it("expect `actions-kit.d.ts` to be generated", async () => {
 	const firstResult = result[0];
 
 	expect(firstResult).toBeDefined();
-	expect(firstResult!.output).toBeDefined();
-	expect(firstResult!.output[0]).toBeDefined();
-	expect(firstResult!.output[0].code).toBeDefined();
-	expect(firstResult!.output[0].code).toMatchSnapshot();
+	expect(firstResult?.output).toBeDefined();
+	expect(firstResult?.output[0]).toBeDefined();
+	expect(firstResult?.output[0].code).toBeDefined();
+	expect(firstResult?.output[0].code).toMatchSnapshot();
 
 	const dtsOutput = await readFile(join(testdirPath, "actions-kit.d.ts"), "utf-8");
 
@@ -125,10 +125,10 @@ describe("augmentations", () => {
 		const firstResult = result[0];
 
 		expect(firstResult).toBeDefined();
-		expect(firstResult!.output).toBeDefined();
-		expect(firstResult!.output[0]).toBeDefined();
-		expect(firstResult!.output[0].code).toBeDefined();
-		expect(firstResult!.output[0].code).toMatchSnapshot();
+		expect(firstResult?.output).toBeDefined();
+		expect(firstResult?.output[0]).toBeDefined();
+		expect(firstResult?.output[0].code).toBeDefined();
+		expect(firstResult?.output[0].code).toMatchSnapshot();
 
 		const dtsOutput = await readFile(join(testdirPath, "actions-kit.d.ts"), "utf-8");
 
@@ -172,10 +172,10 @@ describe("augmentations", () => {
 		const firstResult = result[0];
 
 		expect(firstResult).toBeDefined();
-		expect(firstResult!.output).toBeDefined();
-		expect(firstResult!.output[0]).toBeDefined();
-		expect(firstResult!.output[0].code).toBeDefined();
-		expect(firstResult!.output[0].code).toMatchSnapshot();
+		expect(firstResult?.output).toBeDefined();
+		expect(firstResult?.output[0]).toBeDefined();
+		expect(firstResult?.output[0].code).toBeDefined();
+		expect(firstResult?.output[0].code).toMatchSnapshot();
 
 		const dtsOutput = await readFile(join(testdirPath, "actions-kit.d.ts"), "utf-8");
 
@@ -219,10 +219,10 @@ describe("augmentations", () => {
 		const firstResult = result[0];
 
 		expect(firstResult).toBeDefined();
-		expect(firstResult!.output).toBeDefined();
-		expect(firstResult!.output[0]).toBeDefined();
-		expect(firstResult!.output[0].code).toBeDefined();
-		expect(firstResult!.output[0].code).toMatchSnapshot();
+		expect(firstResult?.output).toBeDefined();
+		expect(firstResult?.output[0]).toBeDefined();
+		expect(firstResult?.output[0].code).toBeDefined();
+		expect(firstResult?.output[0].code).toMatchSnapshot();
 
 		const dtsOutput = await readFile(join(testdirPath, "actions-kit.d.ts"), "utf-8");
 
@@ -269,10 +269,10 @@ describe("inject", () => {
 		const firstResult = result[0];
 
 		expect(firstResult).toBeDefined();
-		expect(firstResult!.output).toBeDefined();
-		expect(firstResult!.output[0]).toBeDefined();
-		expect(firstResult!.output[0].code).toBeDefined();
-		expect(firstResult!.output[0].code).toMatchSnapshot();
+		expect(firstResult?.output).toBeDefined();
+		expect(firstResult?.output[0]).toBeDefined();
+		expect(firstResult?.output[0].code).toBeDefined();
+		expect(firstResult?.output[0].code).toMatchSnapshot();
 
 		const dtsOutput = await readFile(join(testdirPath, "actions-kit.d.ts"), "utf-8");
 
@@ -351,10 +351,10 @@ describe("inject", () => {
 		const firstResult = result[0];
 
 		expect(firstResult).toBeDefined();
-		expect(firstResult!.output).toBeDefined();
-		expect(firstResult!.output[0]).toBeDefined();
-		expect(firstResult!.output[0].code).toBeDefined();
-		expect(firstResult!.output[0].code).toMatchSnapshot();
+		expect(firstResult?.output).toBeDefined();
+		expect(firstResult?.output[0]).toBeDefined();
+		expect(firstResult?.output[0].code).toBeDefined();
+		expect(firstResult?.output[0].code).toMatchSnapshot();
 
 		const dtsOutput = await readFile(join(testdirPath, "actions-kit.d.ts"), "utf-8");
 
@@ -433,10 +433,10 @@ describe("inject", () => {
 		const firstResult = result[0];
 
 		expect(firstResult).toBeDefined();
-		expect(firstResult!.output).toBeDefined();
-		expect(firstResult!.output[0]).toBeDefined();
-		expect(firstResult!.output[0].code).toBeDefined();
-		expect(firstResult!.output[0].code).toMatchSnapshot();
+		expect(firstResult?.output).toBeDefined();
+		expect(firstResult?.output[0]).toBeDefined();
+		expect(firstResult?.output[0].code).toBeDefined();
+		expect(firstResult?.output[0].code).toMatchSnapshot();
 
 		const dtsOutput = await readFile(join(testdirPath, "actions-kit.d.ts"), "utf-8");
 
@@ -484,10 +484,10 @@ describe("inject", () => {
 		const firstResult = result[0];
 
 		expect(firstResult).toBeDefined();
-		expect(firstResult!.output).toBeDefined();
-		expect(firstResult!.output[0]).toBeDefined();
-		expect(firstResult!.output[0].code).toBeDefined();
-		expect(firstResult!.output[0].code).toMatchSnapshot();
+		expect(firstResult?.output).toBeDefined();
+		expect(firstResult?.output[0]).toBeDefined();
+		expect(firstResult?.output[0].code).toBeDefined();
+		expect(firstResult?.output[0].code).toMatchSnapshot();
 
 		const dtsOutput = await readFile(join(testdirPath, "actions-kit.d.ts"), "utf-8");
 
@@ -536,10 +536,10 @@ it("custom output path", async () => {
 	const firstResult = result[0];
 
 	expect(firstResult).toBeDefined();
-	expect(firstResult!.output).toBeDefined();
-	expect(firstResult!.output[0]).toBeDefined();
-	expect(firstResult!.output[0].code).toBeDefined();
-	expect(firstResult!.output[0].code).toMatchSnapshot();
+	expect(firstResult?.output).toBeDefined();
+	expect(firstResult?.output[0]).toBeDefined();
+	expect(firstResult?.output[0].code).toBeDefined();
+	expect(firstResult?.output[0].code).toMatchSnapshot();
 
 	const dtsOutput = await readFile(join(testdirPath, "custom", "actions-kit.d.ts"), "utf-8");
 
