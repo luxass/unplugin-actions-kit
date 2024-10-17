@@ -1,52 +1,154 @@
-# actions-kit
+# unplugin-actions-kit
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 
-A tiny toolkit for GitHub Actions.
+A typesafety for your GitHub Action inputs & outputs. Powered by [unplugin](https://github.com/unjs/unplugin).
 
-> [!WARNING]
-> This package is still in development, and can change at any time.
-
-## 📦 Installation
+## Installation
 
 ```bash
-pnpm install actions-kit
+pnpm install -D unplugin-actions-kit
 ```
 
-## 🚀 Usage
+## Usage
 
-This package contains a set of utilities to help you build GitHub Actions, or you can use it with a bundler like Webpack or Rollup.
 
-### With Bundler
+<details>
+<summary>Vite</summary><br/>
 
-````typescript
+```ts
+// vite.config.ts
+import ActionsKitPlugin from "unplugin-actions-kit/vite";
 
-### Utilities
+export default defineConfig({
+  plugins: [
+    ActionsKitPlugin({ /* options */ }),
+  ],
+});
+```
 
-#### `getValidatedInput`
+<br/></details>
 
-This utility helps you get the input from the action and validate it using [Zod](https://zod.dev)
+<details>
+<summary>Rollup</summary><br/>
+
+```ts
+// rollup.config.js
+import ActionsKitPlugin from "unplugin-actions-kit/rollup";
+
+export default {
+  plugins: [
+    ActionsKitPlugin({ /* options */ }),
+  ],
+};
+```
+
+<br/></details>
+
+<details>
+<summary>Webpack</summary><br/>
+
+```ts
+// webpack.config.js
+module.exports = {
+  /* ... */
+  plugins: [
+    require("unplugin-actions-kit/webpack").default({ /* options */ }),
+  ],
+};
+```
+
+<br/></details>
+
+<details>
+<summary>esbuild</summary><br/>
+
+```ts
+// esbuild.config.js
+import { build } from "esbuild";
+import ActionsKitPlugin from "unplugin-actions-kit/esbuild";
+
+build({
+  /* ... */
+  plugins: [
+    ActionsKitPlugin({
+      /* options */
+    }),
+  ],
+});
+```
+
+<br/></details>
+
+<details>
+<summary>Rspack</summary><br/>
+
+```ts
+// rspack.config.mjs
+import ActionsKitPlugin from "unplugin-actions-kit/rspack"
+
+/** @type {import("@rspack/core").Configuration} */
+export default {
+  plugins: [
+    ActionsKitPlugin({
+      /* options */
+    }),
+  ],
+};
+```
+
+<br/></details>
+
+<details>
+<summary>Rolldown (Experimental)</summary><br/>
+
+```ts
+// rolldown.config.js
+import { defineConfig } from "rolldown";
+import ActionsKitPlugin from "unplugin-actions-kit/rolldown";
+
+export default defineConfig({
+  input: "./index.js",
+  plugins: [
+    ActionsKitPlugin({
+      /* options */
+    }),
+  ],
+});
+```
+
+<br/></details>
+
+## Configuration
 
 ```typescript
-import { getValidatedInput } from "actions-kit";
-import { z } from "zod";
+ActionsKitPlugin({
+	/**
+	 * The path to the action.yml or action.yaml file.
+	 * If not provided, it will look for action.yml or action.yaml in the root directory.
+	 */
+	actionPath?: string;
 
-const schema = z.string().min(1);
-const input = getValidatedInput("example_input", schema);
+	/**
+	 * Inject `inputs` and `outputs` into the global scope.
+	 */
+	inject?: boolean | "inputs" | "outputs";
 
-if (input.success) {
-  console.log("Valid input:", input.data);
-} else {
-  console.error("Validation errors:", input.error);
-}
-````
+	/**
+	 * The output path for the generated typescript file.
+	 * If not provided, it will use the directory where the action.yml or action.yaml file is located.
+	 */
+	outputPath?: string;
+});
+```
+
 
 ## 📄 License
 
 Published under [MIT License](./LICENSE).
 
-[npm-version-src]: https://img.shields.io/npm/v/actions-kit?style=flat&colorA=18181B&colorB=4169E1
-[npm-version-href]: https://npmjs.com/package/actions-kit
-[npm-downloads-src]: https://img.shields.io/npm/dm/actions-kit?style=flat&colorA=18181B&colorB=4169E1
-[npm-downloads-href]: https://npmjs.com/package/actions-kit
+[npm-version-src]: https://img.shields.io/npm/v/unplugin-actions-kit?style=flat&colorA=18181B&colorB=4169E1
+[npm-version-href]: https://npmjs.com/package/unplugin-actions-kit
+[npm-downloads-src]: https://img.shields.io/npm/dm/unplugin-actions-kit?style=flat&colorA=18181B&colorB=4169E1
+[npm-downloads-href]: https://npmjs.com/package/unplugin-actions-kit
