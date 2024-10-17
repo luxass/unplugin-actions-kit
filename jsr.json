@@ -12,9 +12,10 @@
   },
   "exclude": [
     "tsup.config.ts",
-    "eslint.config.mjs",
+    "biome.json",
     "pnpm-lock.yaml",
     ".github/**",
+    "tests",
     "tsconfig.json"
   ]
 }
