@@ -120,15 +120,15 @@ export const unpluginFactory: UnpluginFactory<ActionsKitOptions | undefined> = (
 				return {
 					key,
 					value,
-				}
-			})
+				};
+			});
 
-			actionInputs =  Object.fromEntries(
-        Object.entries(yaml.inputs || {}).map(([name]) => [name, name]),
-      );
+			actionInputs = Object.fromEntries(
+				Object.entries(yaml.inputs || {}).map(([name]) => [name, name]),
+			);
 			actionOutputs = Object.fromEntries(
-        Object.entries(yaml.outputs || {}).map(([name]) => [name, name]),
-      );
+				Object.entries(yaml.outputs || {}).map(([name]) => [name, name]),
+			);
 
 			const outputPath =
 				options.outputPath == null ? dirname(options.actionPath) : options.outputPath;
