@@ -11,8 +11,8 @@ import type { ActionsKitOptions } from "./types";
  */
 export const unpluginFactory: UnpluginFactory<ActionsKitOptions | undefined> = (options = {}) => {
 	let entryPoint: string | undefined;
-	let actionInputs: Record<string, unknown> | undefined;
-	let actionOutputs: Record<string, unknown> | undefined;
+	let actionInputs: Record<string, string> | undefined;
+	let actionOutputs: Record<string, string> | undefined;
 
 	return {
 		name: "unplugin-actions-kit",
@@ -116,8 +116,19 @@ export const unpluginFactory: UnpluginFactory<ActionsKitOptions | undefined> = (
 				throw new TypeError("action.yml or action.yaml is not an object");
 			}
 
-			actionInputs = yaml.inputs;
-			actionOutputs = yaml.outputs;
+			const a = Object.entries(yaml).map(([key, value]) => {
+				return {
+					key,
+					value,
+				}
+			})
+
+			actionInputs =  Object.fromEntries(
+        Object.entries(yaml.inputs || {}).map(([name]) => [name, name]),
+      );
+			actionOutputs = Object.fromEntries(
+        Object.entries(yaml.outputs || {}).map(([name]) => [name, name]),
+      );
 
 			const outputPath =
 				options.outputPath == null ? dirname(options.actionPath) : options.outputPath;

@@ -1470,19 +1470,11 @@ function _ts_generator(thisArg, body) {
     }
 }
 globalThis.ACTION_INPUTS = {
-    "type": {
-        "description": "The type of greeting",
-        "required": true
-    },
-    "who-to-greet": {
-        "description": "Who to greet",
-        "required": true
-    }
+    "type": "type",
+    "who-to-greet": "who-to-greet"
 };
 globalThis.ACTION_OUTPUTS = {
-    "message": {
-        "description": "The greeting message"
-    }
+    "message": "message"
 };
 
 function run() {
@@ -1721,14 +1713,8 @@ function _ts_generator(thisArg, body) {
     }
 }
 globalThis.ACTION_INPUTS = {
-    "type": {
-        "description": "The type of greeting",
-        "required": true
-    },
-    "who-to-greet": {
-        "description": "Who to greet",
-        "required": true
-    }
+    "type": "type",
+    "who-to-greet": "who-to-greet"
 };
 
 function run() {
@@ -1958,9 +1944,7 @@ function _ts_generator(thisArg, body) {
     }
 }
 globalThis.ACTION_OUTPUTS = {
-    "message": {
-        "description": "The greeting message"
-    }
+    "message": "message"
 };
 
 function run() {

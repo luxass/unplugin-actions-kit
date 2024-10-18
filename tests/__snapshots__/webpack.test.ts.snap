@@ -258,8 +258,8 @@ exports[`inject > expect \`ACTION_INPUTS\` & \`ACTION_OUTPUTS\` in global scope 
 ;// external "@actions/core"
 const core_namespaceObject = require("@actions/core");
 ;// ./.vitest-testdirs/vitest-webpack-inject-expect-ACTION_INPUTS-ACTION_OUTPUTS-in-global-scope/index.ts
-globalThis.ACTION_INPUTS = { "type": { "description": "The type of greeting", "required": true }, "who-to-greet": { "description": "Who to greet", "required": true } };
-globalThis.ACTION_OUTPUTS = { "message": { "description": "The greeting message" } };
+globalThis.ACTION_INPUTS = { "type": "type", "who-to-greet": "who-to-greet" };
+globalThis.ACTION_OUTPUTS = { "message": "message" };
 ;
 
 async function run() {
@@ -323,7 +323,7 @@ exports[`inject > expect \`ACTION_INPUTS\` in global scope 1`] = `
 ;// external "@actions/core"
 const core_namespaceObject = require("@actions/core");
 ;// ./.vitest-testdirs/vitest-webpack-inject-expect-ACTION_INPUTS-in-global-scope/index.ts
-globalThis.ACTION_INPUTS = { "type": { "description": "The type of greeting", "required": true }, "who-to-greet": { "description": "Who to greet", "required": true } };
+globalThis.ACTION_INPUTS = { "type": "type", "who-to-greet": "who-to-greet" };
 ;
 
 async function run() {
@@ -378,7 +378,7 @@ exports[`inject > expect \`ACTION_OUTPUTS\` in global scope 1`] = `
 ;// external "@actions/core"
 const core_namespaceObject = require("@actions/core");
 ;// ./.vitest-testdirs/vitest-webpack-inject-expect-ACTION_OUTPUTS-in-global-scope/index.ts
-globalThis.ACTION_OUTPUTS = { "message": { "description": "The greeting message" } };
+globalThis.ACTION_OUTPUTS = { "message": "message" };
 ;
 
 async function run() {

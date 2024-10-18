@@ -393,8 +393,8 @@ function _interopNamespaceDefault(e) {
 
 var core__namespace = /*#__PURE__*/_interopNamespaceDefault(core);
 
-globalThis.ACTION_INPUTS = {"type":{"description":"The type of greeting","required":true},"who-to-greet":{"description":"Who to greet","required":true}};
-globalThis.ACTION_OUTPUTS = {"message":{"description":"The greeting message"}};
+globalThis.ACTION_INPUTS = {"type":"type","who-to-greet":"who-to-greet"};
+globalThis.ACTION_OUTPUTS = {"message":"message"};
 async function run() {
     const type = core__namespace.getInput("type");
     const whoToGreet = core__namespace.getInput("who-to-greet");
@@ -462,7 +462,7 @@ function _interopNamespaceDefault(e) {
 
 var core__namespace = /*#__PURE__*/_interopNamespaceDefault(core);
 
-globalThis.ACTION_INPUTS = {"type":{"description":"The type of greeting","required":true},"who-to-greet":{"description":"Who to greet","required":true}};
+globalThis.ACTION_INPUTS = {"type":"type","who-to-greet":"who-to-greet"};
 async function run() {
     const type = core__namespace.getInput("type");
     const whoToGreet = core__namespace.getInput("who-to-greet");
@@ -528,7 +528,7 @@ function _interopNamespaceDefault(e) {
 
 var core__namespace = /*#__PURE__*/_interopNamespaceDefault(core);
 
-globalThis.ACTION_OUTPUTS = {"message":{"description":"The greeting message"}};
+globalThis.ACTION_OUTPUTS = {"message":"message"};
 async function run() {
     core__namespace.setOutput("message", "Hello, World!");
 }
