@@ -159,7 +159,7 @@
     "@actions/core": "^1.11.1",
     "@biomejs/biome": "^1.9.3",
     "@rollup/plugin-typescript": "^12.1.1",
-    "@rspack/core": "1.0.10",
+    "@rspack/core": "1.0.14",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "20.16.11",
     "esbuild": "^0.24.0",
