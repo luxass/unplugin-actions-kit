@@ -161,7 +161,7 @@
     "@rollup/plugin-typescript": "^12.1.1",
     "@rspack/core": "1.0.10",
     "@types/js-yaml": "^4.0.9",
-    "@types/node": "20.16.11",
+    "@types/node": "20.16.15",
     "esbuild": "^0.24.0",
     "rolldown": "0.13.2",
     "rollup": "^4.24.0",
