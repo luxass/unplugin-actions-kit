@@ -1,5 +1,8 @@
 # unplugin-actions-kit
 
+> [!IMPORTANT]
+> Moved to https://github.com/luxass/actions-kit
+
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 
